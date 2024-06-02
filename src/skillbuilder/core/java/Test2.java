@@ -10,9 +10,9 @@ import java.util.Set;
 public class Test2 {
 
 	public static void main(String[] args) {
-//		operationsOnList();
+		operationsOnList();
 //		operationsOnSet();
-		operationsOnMap();
+//		operationsOnMap();
 	}
 
 	public static void operationsOnMap() {
@@ -20,7 +20,10 @@ public class Test2 {
 		Student s2 = new Student(1, "ankit", 2522);
 		Student s3 = new Student(2, "anurag", 22);
 		Student s4 = s1;
-
+		System.out.println("Before doing changes to content of S4 ref obj==>"+(s1.hashCode()==s4.hashCode()));
+		s4.setName("ankits-2-with-S4");
+		System.out.println("After doing changes to content of S4 ref obj==>"+(s1.hashCode()==s4.hashCode()));
+		System.out.println("-----------------------------------------------------------");
 		Map<Student, String> mp = new HashMap<>();
 		mp.put(s1, "stud-1");
 		mp.put(s2, "stud-2");
@@ -68,9 +71,34 @@ public class Test2 {
 		-----------------------------------------------------------
 		s1.equals(s3)==>>false
 		s1.hashCode() == s3.hashCode()==>false
-
-		
 		 * 
+		 */
+		
+		/**
+		 * OUTPUT: Below output is without overriding equals and hashCode() method in Student class, currently it is using Object class equals and hashCode method 
+		
+		Before doing changes to content of S4 ref obj==>true
+		After doing changes to content of S4 ref obj==>true
+		-----------------------------------------------------------
+		Before removing S1 element, size of Map is==> 3
+		Does Map contains S1 Object==>true
+		Key:Student [id=2, name=anurag, age=22], Value:stud-3
+		Key:Student [id=1, name=ankit, age=2522], Value:stud-2
+		Key:Student [id=1, name=ankits-2-with-S4, age=25], Value:stud-1
+		-----------------------------------------------------------
+		-----------------------------------------------------------
+		After removing S1 element, size of Map is==> 2
+		Does Map contains S1 Object==>false
+		-----------------------------------------------------------
+		Element of Map are:
+		Key:Student [id=2, name=anurag, age=22], Value:stud-3
+		Key:Student [id=1, name=ankit, age=2522], Value:stud-2
+		-----------------------------------------------------------
+		s1.equals(s2)==>>false
+		s1.hashCode() == s2.hashCode()==>false
+		-----------------------------------------------------------
+		s1.equals(s3)==>>false
+		s1.hashCode() == s3.hashCode()==>false
 		 */
 	}
 
@@ -122,10 +150,29 @@ public class Test2 {
 		-----------------------------------------------------------
 		s1.equals(s3)==>>false
 		s1.hashCode() == s3.hashCode()==>false
-
-
 		 */
 
+		/**
+		 * OUTPUT: Below output is without overriding equals and hashCode() method in Student class, currently it is using Object class equals and hashCode method 
+
+		  	Before removing S1 element, size of hashset is==> 3
+			Does Hashset contains S1 Object==>true
+			-----------------------------------------------------------
+			-----------------------------------------------------------
+			After removing S1 element, size of hashset is==> 2
+			Does Hashset contains S1 Object==>false
+			-----------------------------------------------------------
+			Element of HashSet are:
+			Student [id=2, name=anurag, age=22]
+			Student [id=1, name=ankit, age=2522]
+			-----------------------------------------------------------
+			s1.equals(s2)==>>false
+			s1.hashCode() == s2.hashCode()==>false
+			-----------------------------------------------------------
+			s1.equals(s3)==>>false
+			s1.hashCode() == s3.hashCode()==>false
+
+		 */
 	}
 
 	public static void operationsOnList() {
@@ -179,7 +226,29 @@ public class Test2 {
 			-----------------------------------------------------------
 			s1.equals(s3)==>>false
 			s1.hashCode() == s3.hashCode()==>false
+		 */
+		
+		
+		/**
+		 * OUTPUT: Below output is without overriding equals and hashCode() method in Student class, currently it is using Object class equals and hashCode method 
 
+		Before removing S1 element, size of List is==> 4
+		Does List contains S1 Object==>true
+		-----------------------------------------------------------
+		-----------------------------------------------------------
+		After removing S1 element, size of List is==> 3
+		Does List contains S1 Object==>true
+		-----------------------------------------------------------
+		Element of List are:
+		Student [id=1, name=ankit, age=2522]
+		Student [id=2, name=anurag, age=22]
+		Student [id=1, name=ankit, age=25]
+		-----------------------------------------------------------
+		s1.equals(s2)==>>false
+		s1.hashCode() == s2.hashCode()==>false
+		-----------------------------------------------------------
+		s1.equals(s3)==>>false
+		s1.hashCode() == s3.hashCode()==>false
 
 
 		 */
