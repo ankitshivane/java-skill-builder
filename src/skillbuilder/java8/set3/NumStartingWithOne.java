@@ -15,6 +15,17 @@ public class NumStartingWithOne {
 		System.out.println("------------------------------");
 		//approach 2
 		myList.stream().map(String::valueOf).filter(i -> i.startsWith("1")).forEach(System.out::println);
+		/*
+		 OUTPUT:
+		10
+		15̥
+		12
+		------------------------------
+		10
+		15
+		12
+		114
+		 */
 	}
 
 }

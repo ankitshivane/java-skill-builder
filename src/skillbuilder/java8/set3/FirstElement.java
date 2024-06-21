@@ -12,7 +12,9 @@ public class FirstElement {
 	public static void main(String[] args) {
 		List<Integer> myList = Arrays.asList(10, 15, 8, 49, 25, 98, 98, 32, 15);
 		Integer firstElement = myList.stream().findFirst().get();
-		System.out.println(firstElement);
+		System.out.println(firstElement); //output: 10
+		//approach 2:
+		myList.stream().findFirst().ifPresent(System.out::println); //output: 10
 	}
 
 }

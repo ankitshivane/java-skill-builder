@@ -19,5 +19,11 @@ public class FindDuplicateNum {
 			System.out.println(i);
 		});
 	}
+	/*
+	 * output
+	 98
+	15
+ 
+	 */
 
 }
