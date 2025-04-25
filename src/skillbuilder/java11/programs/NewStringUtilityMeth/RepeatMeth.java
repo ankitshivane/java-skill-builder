@@ -1,6 +1,6 @@
 package skillbuilder.java11.programs.NewStringUtilityMeth;
 
-public class RepeaseMeth {
+public class RepeatMeth {
     public static void main(String[] args) {
         // METHOD: 1
         String str = "Ankit";

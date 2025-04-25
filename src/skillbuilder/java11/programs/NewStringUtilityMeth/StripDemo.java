@@ -2,7 +2,7 @@ package skillbuilder.java11.programs.NewStringUtilityMeth;
 
 public class StripDemo {
     public static void main(String[] args) {
-        String str = " Java is Cool ";
+        String str = "\t Java is Cool ";
         System.out.println("Before using strip:" + str);
         String output = str.strip();
         System.out.println("After using strip:" + output);
@@ -11,6 +11,12 @@ public class StripDemo {
         Before using strip: Java is Cool
         After using strip:Java is Cool
          */
+
+        //CASE:2 for Strip method vs trim method: why strip method got introduced when we have trim method
+        String unicodeWhitespace = "\u2000Hello\u2000"; // U+2000 = Unicode whitespace (EN QUAD)
+
+        System.out.println(unicodeWhitespace.trim());   // Output: same string with U+2000 intact
+        System.out.println(unicodeWhitespace.strip());  // Output: "Hello"
 
         testStripLeading();
         testStripTrailing();
