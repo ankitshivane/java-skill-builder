@@ -7,7 +7,7 @@
 1) Switch Expressions (Standard)
 2) Pattern Matching for instanceof (Preview)
 3) Helpful NullPointerExceptions
-4) Records (Preview)
+4) Records (Preview) [For record Masterclass refer..](../indepth/record/recordMasterclass.md)
 5) Text Blocks (Second Preview)
 
 ---

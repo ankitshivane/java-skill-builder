@@ -6,7 +6,7 @@
 
 1) Switch Expressions (Preview feature)
 2) File mismatch() Method
-3) Compact Number Formatting]
+3) Compact Number Formatting
 4) Teeing Collectors in Stream API
 5) Java Strings New Methods – indent(), transform(), describeConstable(), and
    resolveConstantDesc().

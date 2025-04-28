@@ -67,13 +67,13 @@ Below are the list of java 11 features:
       Calculator cal = (var i, int j) -> i+j;  Invalid ```
 
 * If we have simple Parameter in Lambda and if we want to use "var" then () are
-  mandatory.
+  mandatory. [refer](programs/LambdaExpr/VarWithLambdaDemo2.java)
   ``` 
     interface Calculator{
     int sqr(int i);
     }
     Calculator cal = var i -> i+j  Invalid
-    Calculator cal = (var i) -> i+j;  Invalid 
+    Calculator cal = (var i) -> i+j;  Valid 
   ```
 
 
@@ -172,7 +172,7 @@ D:\java11practice>java Test
       read data from file and to write data to file.
         * ```public static Path writeString(Path path, CharSequence csq, OpenOption... options) throws IOException```
         *
-        ```public static Path writeString(Path path, CharSequence csq, Charset cs, OpenOption...options) throws IOException```
+      ```public static Path writeString(Path path, CharSequence csq, Charset cs, OpenOption...options) throws IOException```
         * ```public static String readString(Path path) throws IOException```
         * ```public static String readString(Path path, Charset cs) throws IOException```
 7) Flight Recorder
