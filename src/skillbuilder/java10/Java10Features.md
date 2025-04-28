@@ -23,10 +23,10 @@ Below are the list of java 10 features:
    * Type Inference is applicable for only local variables only, not applicable for class level
      variables.
    * Type Inference is not possible for Parameters in methods, constructors....
-   *  Type inference is not possible for variables declaration with out initialization and with
+   *  Type inference is not possible for variables declaration without initialization and with
       null value initialization.
    * Type inference is not possible for Lambda Expression variable declaration, but, we can
-     apply Type Inference for variables inside Lambda expressions
+     apply Type Inference for variables inside Lambda expressions -- Until Java 10 version only, in Java 11 we can use var as parameter in lambda function
    * we can not use var as a method return type
 2) Consolidate the JDK Forest into a Single Repository
 3) Garbage-Collector Interface
