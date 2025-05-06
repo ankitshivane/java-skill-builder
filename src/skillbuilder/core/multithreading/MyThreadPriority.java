@@ -1,4 +1,4 @@
-package skillbuilder.core.java.multithreading;
+package skillbuilder.core.multithreading;
 
 public class MyThreadPriority extends Thread {
     public MyThreadPriority(String threadName) {

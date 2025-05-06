@@ -1,4 +1,4 @@
-package skillbuilder.core.java.multithreading;
+package skillbuilder.core.multithreading;
 
 public class MyThread2 extends Thread {
     public void run() {

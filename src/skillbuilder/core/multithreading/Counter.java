@@ -1,4 +1,4 @@
-package skillbuilder.core.java.multithreading;
+package skillbuilder.core.multithreading;
 
 public class Counter {
     private int count = 0;

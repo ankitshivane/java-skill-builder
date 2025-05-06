@@ -1,4 +1,4 @@
-package skillbuilder.core.java.multithreading;
+package skillbuilder.core.multithreading;
 
 public class ThreadInterruption implements Runnable {
     public static void main(String[] args) {

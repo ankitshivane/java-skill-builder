@@ -1,4 +1,4 @@
-package skillbuilder.core.java.multithreading;
+package skillbuilder.core.multithreading;
 
 public class Thr2 extends Thread {
     // Allowing child thread Th2 to wait until main thread finish

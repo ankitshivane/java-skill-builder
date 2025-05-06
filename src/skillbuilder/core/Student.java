@@ -1,4 +1,4 @@
-package skillbuilder.core.java;
+package skillbuilder.core;
 
 import java.util.Objects;
 
