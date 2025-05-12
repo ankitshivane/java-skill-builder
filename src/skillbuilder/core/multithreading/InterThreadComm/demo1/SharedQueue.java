@@ -1,4 +1,4 @@
-package skillbuilder.core.multithreading.InterThreadComm;
+package skillbuilder.core.multithreading.InterThreadComm.demo1;
 
 import java.util.LinkedList;
 import java.util.Queue;

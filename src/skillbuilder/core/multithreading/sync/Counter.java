@@ -1,9 +1,9 @@
-package skillbuilder.core.multithreading;
+package skillbuilder.core.multithreading.sync;
 
 public class Counter {
     private int count = 0;
 
-    public synchronized void increment() {
+    public void increment() {
         this.count++;
     }
 

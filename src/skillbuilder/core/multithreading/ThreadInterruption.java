@@ -5,7 +5,7 @@ public class ThreadInterruption implements Runnable {
         ThreadInterruption threadInterruption = new ThreadInterruption();
         Thread t1 = new Thread(threadInterruption);
         t1.start();
-//        t1.interrupt();
+//        t1.interrupt(); // uncomment this line to see how thread is inturrpted
 
         ThreadInterruption threadInterruption2 = new ThreadInterruption();
         Thread t2 = new Thread(threadInterruption2);

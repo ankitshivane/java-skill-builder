@@ -1,10 +1,14 @@
-package skillbuilder.core.multithreading.InterThreadComm;
+package skillbuilder.core.multithreading.InterThreadComm.demo1;
 
 class Producer extends Thread {
     private SharedQueue shared;
 
     public Producer(SharedQueue shared) {
         this.shared = shared;
+    }
+
+    public Producer() {
+
     }
 
     public void run() {

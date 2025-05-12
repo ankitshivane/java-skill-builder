@@ -1,4 +1,4 @@
-package skillbuilder.core.multithreading;
+package skillbuilder.core.multithreading.sync;
 
 public class SynchronizedDemo extends Thread {
     Counter counter;

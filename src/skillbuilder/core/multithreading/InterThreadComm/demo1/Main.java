@@ -1,13 +1,13 @@
-package skillbuilder.core.multithreading.InterThreadComm;
+package skillbuilder.core.multithreading.InterThreadComm.demo1;
 
 public class Main {
     public static void main(String[] args) {
         SharedQueue shared = new SharedQueue();
-        Producer producer = new Producer(shared);
-        Consumer consumer = new Consumer(shared);
-
-        producer.start();
-        consumer.start();
+//        Producer producer = new Producer(shared);
+//        Consumer consumer = new Consumer(shared);
+//
+//        producer.start();
+//        consumer.start();
     }
     /*
     OUTPUT:

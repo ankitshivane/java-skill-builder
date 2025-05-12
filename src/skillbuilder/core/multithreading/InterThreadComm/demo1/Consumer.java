@@ -1,4 +1,4 @@
-package skillbuilder.core.multithreading.InterThreadComm;
+package skillbuilder.core.multithreading.InterThreadComm.demo1;
 
 class Consumer extends Thread {
     private SharedQueue shared;
