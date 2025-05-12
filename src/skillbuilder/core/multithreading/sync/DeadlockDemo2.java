@@ -30,6 +30,10 @@ class A {
     public void normalMethodOfA() {
         System.out.println("Inside A class, normal method..");
     }
+
+    public static synchronized void normalStaticMethodOfA() {
+        System.out.println("Inside A class, normal static method..");
+    }
 }
 
 class B {
@@ -57,6 +61,7 @@ class Deadlock implements Runnable {
         t.start();
         a.foo(b);//main thread
         a.normalMethodOfA();
+        A.normalStaticMethodOfA();
     }
 
     @Override
