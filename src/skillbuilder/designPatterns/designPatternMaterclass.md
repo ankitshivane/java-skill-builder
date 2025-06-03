@@ -21,9 +21,9 @@
 * All the creational patterns define the best possible way in which an object can be instantiated. The can be
   categorized as below:
     * Singleton - [Indepth Explanation refers...](creational/singleton/SingletonDesignPatternMasterclass.md)
-    * Factory Method
+    * Factory Method - [Indepth Explanation refers...](creational/factory/FactoryMethodDesignPattern.md)
     * Abstract Factory
-    * Builder
+    * Builder - [Indepth Explanation refers...](creational/builder/BuilderDesignPattern.md)
     * Prototype
 
 ## Structural Patterns:
@@ -44,7 +44,7 @@
 * Behavioral design pattern is design patterns that identify common communication pattern between objects and realized
   these patterns. By doing this so, these patterns increase flexibility in carrying out this communication.
 * That is prescribing the way objects interact with each other, Below are the 11 Behavioral design patters:
-    * Observer
+    * Observer - [Indepth Explanation refers...](behavioural/Observer/ObserverDesignPatternMasterclass.md)
     * Strategy
     * Template Method
     * Command
@@ -62,7 +62,7 @@
   backend/microservices architecture:
 
   | **Pattern**                 | **Category** | **Why Important**                                                 |
-    | --------------------------- | ------------ | ----------------------------------------------------------------- |
+      | --------------------------- | ------------ | ----------------------------------------------------------------- |
   | **Singleton**               | Creational   | Commonly asked, used for config, cache manager, DB connections    |
   | **Factory Method**          | Creational   | Decouples object creation from usage, used in frameworks          |
   | **Builder**                 | Creational   | Complex object creation (e.g., DTOs, request objects)             |
