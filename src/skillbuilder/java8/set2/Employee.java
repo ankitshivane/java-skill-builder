@@ -1,6 +1,6 @@
 package skillbuilder.java8.set2;
 
-class Employee {
+public class Employee {
 	int id;
 
 	String name;
