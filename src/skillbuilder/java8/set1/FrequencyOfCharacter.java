@@ -9,11 +9,18 @@ public class FrequencyOfCharacter {
 	 * streams?
 	 */
 	public static void main(String[] args) {
-		String inputString = "Java Concept Of The Day";
+		String inputString = "java day".replaceAll("\\s","");
 		Map<Character, Long> collect = inputString.chars().mapToObj(i -> (char) i)
 				.collect(Collectors.groupingBy(i->i, Collectors.counting()));
 		collect.entrySet().stream().forEach(i -> {
 			System.out.println("Key:" + i.getKey() + "-" + "count:" + i.getValue());
 		});
+		/** OUTPUT:
+		 Key:a-count:3
+		 Key:d-count:1
+		 Key:v-count:1
+		 Key:y-count:1
+		 Key:j-count:1
+		 */
 	}
 }

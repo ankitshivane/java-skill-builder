@@ -19,5 +19,13 @@ public class FrequencyOfElement {
 		collect.entrySet().stream().forEach(i -> {
 			System.out.println("Key:" + i.getKey() + "->" + "count:" + i.getValue());
 		});
+		/**
+		 * OUTPUT:
+		 Key:Pen->count:2
+		 Key:Stapler->count:1
+		 Key:Pencil->count:2
+		 Key:Note Book->count:2
+		 Key:Eraser->count:1
+		 */
 	}
 }

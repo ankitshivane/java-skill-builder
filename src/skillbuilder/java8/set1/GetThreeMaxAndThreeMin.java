@@ -1,8 +1,6 @@
 package skillbuilder.java8.set1;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class GetThreeMaxAndThreeMin {
@@ -22,12 +20,22 @@ public class GetThreeMaxAndThreeMin {
 				.collect(Collectors.toList());
 		System.out.println("Three maximum num:" + threeMaxNum);
 
+		// Core Java Approach
+		coreJavaApproach1(listOfIntegers);
+
 		/*
 		 * output: Three Minimum num:[12, 15, 24]
 		 *  Three maximum num:[89, 75, 56]
 		 * 
 		 */
+	}
 
+	private static void coreJavaApproach1(List<Integer> listOfIntegers) {
+		Collections.sort(listOfIntegers,Comparator.reverseOrder());
+		System.out.println("Three Minimum num:"+listOfIntegers.subList(0,3));
+
+		Collections.sort(listOfIntegers,Comparator.naturalOrder());
+		System.out.println("Three maximum num:"+listOfIntegers.subList(0,3));
 	}
 
 }
