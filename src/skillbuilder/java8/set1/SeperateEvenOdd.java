@@ -13,7 +13,7 @@ public class SeperateEvenOdd {
 		List<Integer> listOfIntegers = Arrays.asList(71, 18, 42, 21, 67, 32, 95, 14, 56, 87);
 		Map<Boolean, List<Integer>> collect = listOfIntegers.stream()
 				.collect(Collectors.partitioningBy(i -> i % 2 == 0));
-//		collect.forEach(i->System.out.println(););
+
 		collect.entrySet().stream().forEach(i -> {
 			if (i.getKey()) {
 				System.out.println("Even Number:" + i.getValue());
@@ -21,6 +21,10 @@ public class SeperateEvenOdd {
 				System.out.println("Odd Number:" + i.getValue());
 			}
 		});
-
+		/*
+		OUTPUT:
+		Odd Number:[71, 21, 67, 95, 87]
+		Even Number:[18, 42, 32, 14, 56]
+		 */
 	}
 }

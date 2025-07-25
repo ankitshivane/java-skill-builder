@@ -12,5 +12,10 @@ public class SumAndAvgInt {
 		double asDouble = Arrays.stream(a).average().getAsDouble();
 		System.out.println("Sum:"+sum);
 		System.out.println("Average:"+asDouble);
+		/*
+		OUTPUT:
+		Sum:347
+		Average:43.375
+		 */
 	}
 }
