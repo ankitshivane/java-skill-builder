@@ -12,6 +12,8 @@ public class SerDemo1 {
         EagerSingleton instance2 = (EagerSingleton) in.readObject(); // new object created!
         System.out.println("instance1 == instance2 : ? " + (instance1 == instance2));
         /*
+        Explanation: as we can see here the comparison of both serialized and desialized object is false it means while deserializing a new object
+        got created which breaks singleton in serialization.
         OUTPUT:
         instance1 == instance2 : ? false
          */

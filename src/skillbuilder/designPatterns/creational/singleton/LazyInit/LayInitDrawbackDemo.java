@@ -1,4 +1,4 @@
-package skillbuilder.designPatterns.creational.singleton;
+package skillbuilder.designPatterns.creational.singleton.LazyInit;
 
 public class LayInitDrawbackDemo {
     public static void main(String[] args) {
@@ -55,7 +55,7 @@ class LazyInitSingCls {
  */
 
 /// /
-/*
+/**
 With synchronized keyword
 as you can see below with synchronized keyword you can see constructor got called only one time.
 getInstanceSync method called 2 times but only one object created.
