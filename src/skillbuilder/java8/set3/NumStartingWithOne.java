@@ -11,6 +11,7 @@ public class NumStartingWithOne {
 	 */
 	public static void main(String[] args) {
 		List<Integer> myList = Arrays.asList(10, 15, 8, 49, 25, 98, 32, 12, 114);
+		/** IMP NOTE: this below solution will only work if we have two digits in the number otherwise it wont work**/
 		myList.stream().filter(i -> i / 10 == 1).forEach(System.out::println);
 		System.out.println("------------------------------");
 		//approach 2

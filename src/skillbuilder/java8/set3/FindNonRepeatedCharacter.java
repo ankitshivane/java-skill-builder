@@ -21,5 +21,8 @@ public class FindNonRepeatedCharacter {
 				.collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
 				.entrySet().stream().filter(entry -> entry.getValue() == 1L).map(entry -> entry.getKey()).findFirst()
 				.ifPresent(i -> System.out.println(i));
+		/* Output:
+		j
+		 */
 	}
 }
