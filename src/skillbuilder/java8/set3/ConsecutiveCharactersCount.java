@@ -18,7 +18,7 @@ public class ConsecutiveCharactersCount {
 						list.add(arr);
 					}
 //				}, ArrayList::addAll).stream().map(arr -> (char) arr[0] + String.valueOf(arr[1])).collect(Collectors.toList());
-				}, ArrayList::addAll).stream().map(arr -> new StringBuilder().append((char)arr[0]).append(arr[1]).toString()).collect(Collectors.joining());
+				}, ArrayList::addAll).stream().map(arr -> new StringBuilder().append((char)arr[0]).append(arr[1])).collect(Collectors.joining());
 
 
 //		result.forEach(System.out::println);
