@@ -1,6 +1,4 @@
-package skillbuilder.coding.strings_programs;
-
-import java.util.Arrays;
+package skillbuilder.coding.strings;
 
 public class ReverseStringGFG {
     /**

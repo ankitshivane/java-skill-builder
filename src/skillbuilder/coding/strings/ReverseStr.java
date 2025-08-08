@@ -1,4 +1,4 @@
-package skillbuilder.coding.strings_programs;
+package skillbuilder.coding.strings;
 
 public class ReverseStr {
     /**

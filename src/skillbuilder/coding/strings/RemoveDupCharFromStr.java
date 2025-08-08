@@ -1,4 +1,4 @@
-package skillbuilder.coding.strings_programs;
+package skillbuilder.coding.strings;
 
 import java.util.HashSet;
 import java.util.Set;
