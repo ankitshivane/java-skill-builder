@@ -11,6 +11,7 @@ public class MaxSumOfSubArray {
         int k=3;
         maxSumOfSubArray(arr,k);
         maxSumOfSubArraySlidingWindow(arr,k);
+        maxSum(arr,k);
     }
 
     /*
@@ -48,4 +49,22 @@ public class MaxSumOfSubArray {
         System.out.println(max);
     }
 
+    // same as optimize approach 1 but slightly diff
+    private static void maxSum(int[] arr,int k){
+        int left=0;
+        int maxSum=Integer.MIN_VALUE,sum=0;
+        for (int right=0;right<arr.length;right++){
+            sum+=arr[right];
+
+            if(right>=k){
+                sum-=arr[left];
+                left++;
+            }
+            if(right>=k-1){
+                if(sum>maxSum)
+                    maxSum=sum;
+            }
+        }
+        System.out.println(maxSum);
+    }
 }
