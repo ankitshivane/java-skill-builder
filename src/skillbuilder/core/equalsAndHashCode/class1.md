@@ -595,7 +595,7 @@ hash(a, b, c)   // handles null safely
 
 # 🧠 INTERVIEW GOLD POINTS
 
-1. If you override `equals()` but not `hashCode()`, collections like `HashSet` and `HashMap` will **misbehave**.
+1. If you override `equals()` but not `hashCode()`, collections like `HashSet` and `HashMap` will **misbehave**. [refer](hashCode/Test4.java)
 2. Two unequal objects can have the same hash code (hash collision), but it’s rare and acceptable.
 3. Never use mutable fields in `equals()` and `hashCode()` if the object is used in hash-based collections.
 4. Always make `equals()` **consistent**, **reflexive**, **symmetric**, **transitive**.
@@ -604,7 +604,3 @@ hash(a, b, c)   // handles null safely
 7. For better maintainability → prefer **records** or **Lombok annotations**.
 
 ---
-
-Would you like me to create a **cleanly formatted Markdown notes file (like a PDF or `.md` doc)** you can directly copy
-into your personal notes app? It’ll include formatted headings, code blocks, and diagrams showing `equals` and
-`hashCode` interaction inside HashMap.
