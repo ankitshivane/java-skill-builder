@@ -18,7 +18,6 @@ public class CheckIfStringAnagram {
 		/*
 		 * Java 8 program to check if two strings are anagrams or not?
 		 */
-		String d="hgbdcysa";
 		String s1 = "RaceCkar";
 		String s2 = "CarRace";
 		//get sorted string using approach 1
