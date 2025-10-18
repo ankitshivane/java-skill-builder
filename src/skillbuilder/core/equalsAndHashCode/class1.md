@@ -26,7 +26,11 @@ public String toString()
 
 ## 🔹 Default behavior
 
-If you don’t override it, `equals()` in `Object` behaves like the `==` operator:
+* We can use this method to check equivalence of two objects.
+* If our class doesn't contain .equals() method then object class .equals() method will be executed which is always
+  meant for reference comparison[address
+  comparison]. i.e., if two references pointing to the same object then only .equals() method returns true . If you
+  don’t override it, `equals()` in `Object` behaves like the `==` operator:
 
 ```java
 public boolean equals(Object obj) {
@@ -34,7 +38,11 @@ public boolean equals(Object obj) {
 }
 ```
 
-It checks **reference equality** — i.e., whether both references point to the **same object** in memory.
+* [For Example](equals/Student.java)
+* In the above program Object class .equals() method got executed which is always
+  meant for reference comparison that is if two references pointing to the same
+  object then only .equals(() method returns true.
+  It checks **reference equality** — i.e., whether both references point to the **same object** in memory.
 
 Example:
 
@@ -71,6 +79,19 @@ println(s1.equals(s2)); // false (no override)
 
 Because `Student` inherits `equals()` from `Object`, and compares references, not data.
 
+* When ever we are overriding .equals() method we have to consider the following
+  things :
+    * Meaning of content comparison i.e., whether we have to check the names
+      are equal (or) roll numbers (or) both are equal.
+    * If we are passing different type of objects (heterogeneous object) our
+      .equals() method should return false but not ClassCastException i.e., we
+      have to handle ClassCastException to return false.
+    * If we are passing null argument our .equals() method should return false
+      but not NullPointerException i.e., we have to handle
+      NullPointerException to return false.
+    * The following is the proper way of overriding .equals() method for
+      content comparison in Student class.
+
 ---
 
 ## 🔹 When to override `equals()`
@@ -100,6 +121,9 @@ class Student {
 }
 ```
 
+* In String class , Wrapper classes and all collection classes .equals( ) method is
+  overriden for content comparision
+
 ---
 
 ## 🔹 The **Contract** of `equals()` (very important)
@@ -115,6 +139,16 @@ Java specifies 5 rules that must **always hold true** for a correctly overridden
 | **Non-nullity** | `x.equals(null)` must return false                                  | Never throw NullPointerException |
 
 ✅ Violating any of these can cause unpredictable behavior in collections like `HashSet`, `HashMap`, etc.
+
+### Relationship between .equals() method and ==(double equal operator) :
+
+1. If r1==r2 is true then r1.equals(r2) is always true i.e., if two objects are equal by
+   == operator then these objects are always equal by .equals( ) method also.
+2. If r1==r2 is false then we can't conclude anything about r1.equals(r2) it may
+   return true (or) false.
+3. If r1.equals(r2) is true then we can't conclude anything about r1==r2 it may
+   returns true (or) false.
+4. If r1.equals(r2) is false then r1==r2 is always false.
 
 ---
 
@@ -199,6 +233,107 @@ public native int hashCode();
 
 Each object’s hash code is typically derived from its **memory address** (JVM dependent).
 
+1. For every object jvm will generate a unique number which is nothing but
+   hashCode.
+2. Jvm will using hashCode while saving objects into hashing related data
+   structures like HashSet, HashMap, and Hashtable etc.
+3. If the objects are stored according to hashCode searching will become very
+   efficient (The most powerful search algorithm is hashing which will work based
+   on hashCode).
+4. If we didn't override hashCode() method then Object class hashCode() method
+   will be executed which generates hashCode based on address of the object but it
+   doesn't mean hashCode represents address of the object.
+5. Based on our programming requirement we can override hashCode() method to
+   generate our own hashcode.
+6. Overriding hashCode() method is said to be proper if and only if for every object
+   we have to generate a unique number as hashcode for every object.
+
+### toString() method vs hashCode() method:
+
+* CASE 1:
+
+```java
+class Test {
+    int i;
+
+    Test(int i) {
+        this.i = i;
+    }
+
+    public static void main(String[]
+                                    args) {
+        Test t1 = new Test(10);
+        Test t2 = new Test(100);
+        System.out.println(t1);
+        System.out.println(t2);
+    }
+}
+//Object==>toString() called. 
+//Object==>hashCode() called.
+```
+
+* In this case Object class toString( ) method
+  got executed which is internally calls Object
+  class hashCode( ) method.
+
+* CASE 2:
+
+```java
+class Test {
+    int i;
+
+    Test(int i) {
+        this.i = i;
+    }
+
+    public int hashCode() {
+        return i;
+    }
+
+    public static void main(String[]
+                                    args) {
+        Test t1 = new Test(10);
+        Test t2 = new Test(100);
+        System.out.println(t1);
+        System.out.println(t2);
+    }
+}
+//Object==>toString() called. 
+//Test==>hashCode() called. 
+```
+
+* In this case Object class toString( ) method
+  got executed which is internally calls Test
+  class hashCode( ) method.
+
+* CASE 3:
+
+```java
+
+class Test {
+    int i;
+
+    Test(int i) {
+        this.i = i;
+    }
+
+    public String toString() {
+        return i + "";
+    }
+
+    public static void main(String[]
+                                    args) {
+        Test t1 = new Test(10);
+        Test t2 = new Test(100);
+        System.out.println(t1); // 10
+        System.out.println(t2); // 100
+    }
+}
+```
+
+* here in this program we are trying to print the t1 and t2 objects so internally JVM will invoke toString() method as
+  we have already overridden toString() in our class it won't execute Object class toString method.
+
 ---
 
 ## 🔹 Relationship between `equals()` and `hashCode()`
@@ -207,30 +342,28 @@ Java enforces a **critical contract**:
 
 > If two objects are equal according to `equals()`, they **must have the same hash code**.
 
-| Case                       | Requirement                                   |
-|----------------------------|-----------------------------------------------|
-| `x.equals(y) == true`      | `x.hashCode() == y.hashCode()` ✅ Must be true |
-| `x.equals(y) == false`     | `hashCode` *may* be same (hash collision)     |
-| If you override `equals()` | You **must also override** `hashCode()`       |
+| Case                                    | Requirement                                   |
+|-----------------------------------------|-----------------------------------------------|
+| `x.equals(y) == true`                   | `x.hashCode() == y.hashCode()` ✅ Must be true |
+| `x.equals(y) == false`                  | `hashCode` *may* be same (hash collision)     |
+| If `x.hashCode() == y.hashCode()` false | `x.equals(y)` is always false                 |
+| If you override `equals()`              | You **must also override** `hashCode()`       |
+
+* To maintain the above contract between .equals() and hashCode() methods whenever
+  we are overriding .equals() method compulsory we should override hashCode() method.
+  Violation leads to no compile time error and runtime error but it is not good
+  programming practice.
 
 ---
 
 ## 🔹 Why is it important?
 
-Let’s say you put an object in a `HashSet`:
-
-```java
-Set<Student> set = new HashSet<>();
-set.
-
-add(new Student("ankit", 1));
-        System.out.
-
-println(set.contains(new Student("ankit", 1)));
-```
-
-If `hashCode()` is not overridden → `contains()` will return **false**,
-because it will look in the wrong hash bucket (different hash code).
+* Let’s say you put an object in a `HashSet`:[refer](hashCode/Student.java)
+* If `hashCode()` is not overridden → `contains()` will return **false**, then Object class hashCode() method will be
+  invoke for calculating hash which is based on memory ref because it will look in the
+  wrong hash bucket (different hash code).
+* CASE 2: here in the [Person class example](hashCode/Person.java) here I have overridden both equals and hashCode and
+  explain the output in the example.
 
 ---
 
@@ -255,6 +388,11 @@ public int hashCode() {
     return result;
 }
 ```
+
+* If hashCode of two objects are not equal then .equals() method always return false. [Prof](hashCode/Test1.java)
+* . If 2 objects are equal by == operator then their hash codes must be same.(valid). [Proof](hashCode/Test2.java)
+* . If == operator returns false then their hash codes(may be same (or) may be
+  different) [proof](hashCode/Test3.java)
 
 👉 `31` is used because it’s prime and helps generate unique hashes efficiently.
 
@@ -315,6 +453,7 @@ println(s.toString()); // Student@1a2b3c
   wrapper classes, all Collection classes are not depending on Object class toString()
   method, they are having their own toString() method inorder to display their own data
 * [For Example](toString/Demo.java)
+
 ```java
 System.out.println(s); // calls s.toString()
 ```
