@@ -24,11 +24,16 @@ public class CommonElementsInArr {
         approach4(list1, list2);
         //Core Java / DSA Approaches
         approach5(arr1, arr2);
-        /*
+        approach6(arr1, arr2); //Two-Pointer Technique (For Sorted Arrays)
+        /**
          * output:
-         * [21, 34, 56]
-         * [21, 34, 56]
-
+         [21, 34, 56]
+         [21, 34, 56]
+         Approach 2:->[21, 34, 56]
+         Approach 3:->[21, 34, 56]
+         Approach 4:->[21, 34, 56]
+         Approach 5:->[21, 34, 56]
+         Approach 6:->[21, 34, 56]
          */
     }
 
@@ -101,6 +106,35 @@ public class CommonElementsInArr {
 
          Pros: Very easy to understand
          Cons: Not efficient for large arrays
+         */
+    }
+
+    private static void approach6(int[] arr1, int[] arr2) {
+        //Two-Pointer Technique (For Sorted Arrays)
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        int i = 0, j = 0;
+        List<Integer> common = new ArrayList<>();
+
+        while (i < arr1.length && j < arr2.length) {
+            if (arr1[i] == arr2[j]) {
+                common.add(arr1[i]);
+                i++;
+                j++;
+            } else if (arr1[i] < arr2[j]) {
+                i++;
+            } else {
+                j++;
+            }
+        }
+
+        System.out.println("Approach 6:->" + common);
+        /*
+        Explanation:
+        Since arrays are sorted, move pointers intelligently.
+
+        Pros: O(n) time, O(1) space
+        Cons: Works only if arrays are sorted
          */
     }
 
