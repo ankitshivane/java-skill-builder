@@ -5,12 +5,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static skillbuilder.java8.set1.ExtractDuplicateElement.approach2;
-
 public class First10OddNumbers {
 
 	/**
-	 * First 10 odd numbers
+	 * Find First 10 odd numbers
 	 */
 	public static void main(String[] args) {
 		// solution using Java Stream approach
