@@ -2,7 +2,7 @@ package skillbuilder.core.multithreading;
 
 public class MyThread2 extends Thread {
     public void run() {
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 1; i <= 2000; i++) {
             /*try {
 //                Thread.yield();
                 System.out.println("Inside Thread-0");
@@ -10,7 +10,7 @@ public class MyThread2 extends Thread {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }*/
-            System.out.println("Inside Thread-0");
+            System.out.println("Inside Thread-0, COUNT"+i);
         }
     }
 
