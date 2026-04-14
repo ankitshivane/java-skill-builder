@@ -1,0 +1,5 @@
+# Load Balancing Masterclass
+* Load balancer can seat between user and frontend or between frontend and backend or between backend and database
+* in a distributed system, load balancer is a device that distributes network or application traffic across a cluster of servers. It helps to improve the performance, reliability, and scalability of the system by ensuring that no single server is overwhelmed with too much traffic.
+* load balancer performs health checks of the servers in the cluster and routes traffic to healthy servers, it pings to the server at regular intervals and if the server doesn't respond within the stipulated time the load balancer do not send network traffic to that server until its recover.
+* It can also perform SSL termination, session persistence, and other functions to optimize the performance of the system.
