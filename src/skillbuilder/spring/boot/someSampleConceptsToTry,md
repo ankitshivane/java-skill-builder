@@ -1,0 +1,3 @@
+1. as spring suggest we create a bean which is singleton right so lets say one class made changes to its field then can another class see thsoe changes or not?
+- in spring what process does spring follow to search beans in container so it can inject them to other classes? like by type or by name or by both?
+- What happens if you create a class without any Spring annotations and try to use it in a Spring-managed class? Will it work? Why or why not?
